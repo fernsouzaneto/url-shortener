@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 public interface IURLShortenerRepository extends JpaRepository<UrlDAO, Long> {
 
-    @Query(value = "SELECT * from TB_URL where generatedID = :generatedID", nativeQuery = true)
+    @Query(value = "SELECT * FROM TB_URL where generatedID = :generatedID", nativeQuery = true)
     UrlDAO getShortedURLByGeneratedID(@Param("generatedID") String generatedID);
 
     @Modifying
